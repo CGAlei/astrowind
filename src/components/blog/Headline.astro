@@ -2,14 +2,36 @@
 const { title = await Astro.slots.render('default'), subtitle = await Astro.slots.render('subtitle') } = Astro.props;
 ---
 
-<header class="mb-8 md:mb-16 text-center max-w-4xl mx-auto">
+<!-- 
+
+    ** sin background ** 
+    <header class="mb-8 md:mb-16 text-center max-w-4xl mx-auto "> 
+    
+    ** Background gris, border round,  ** 
+    <header class="mb-8 md:mb-16 py-8 text-center max-w-4xl mx-auto bg-white rounded-md dark:bg-slate-800">
+  
+  -->
+
+<header
+  class="mb-8 md:mb-16 py-8 px-4 text-center max-w-4xl mx-auto bg-gray-100 rounded-md dark:bg-slate-800 shadow-md"
+>
   <h1 class="text-4xl md:text-5xl font-bold leading-tighter tracking-tighter font-heading" set:html={title} />
   {
     subtitle && (
       <div class="mt-2 md:mt-3 mx-auto text-xl text-gray-500 dark:text-slate-400 font-medium" set:html={subtitle} />
     )
   }
-        <!-- Horizontal line separator -->
-<hr class="my-8 border-t border-gray-200 dark:border-slate-700" />
-</header>
+  <!-- Separador horizontal 
+    <hr class="mt-8 mb-4 border-t border-gray-200 dark:border-slate-700" />
+   -->
 
+  <hr class="my-8 border-t border-gray-200 dark:border-slate-700" />
+
+  <!-- 
+    my-8: This class sets the vertical margins of the horizontal rule to 8 units (e.g., pixels, ems, or rems). This means there will be 8 units of space above and below the horizontal rule.
+    border-t: This class sets a top border for the horizontal rule.
+    border-gray-200: This class sets the color of the top border to a light gray (#E5E7EB).
+    dark:border-slate-700: This class applies a different color for the top border when the website is in dark mode. It sets the color to a dark gray (#374151).
+    -->
+    
+</header>
